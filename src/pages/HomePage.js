@@ -17,7 +17,7 @@ function HomePage({ lyrics, artist, title, setLyrics }) {
           setLyrics(response.data.lyrics);
         }
       })
-      .catch((error) => setLyrics("Please enter an artist and song name"));
+      .catch(() => setLyrics("Please enter a valid artist and song"));
   };
 
   useEffect(() => {
