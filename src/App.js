@@ -1,24 +1,28 @@
-import logo from "./logo.svg";
 import "./App.css";
+import React, { useState } from "react";
+import HomePage from "./pages/HomePage";
+import MyNav from "./components/MyNav";
 
 function App() {
+  const [artist, setArtist] = useState("");
+  const [title, setTitle] = useState("");
+  const [lyrics, setLyrics] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MyNav
+        setTitle={setTitle}
+        title={title}
+        artist={artist}
+        setArtist={setArtist}
+      />
+      <HomePage
+        lyrics={lyrics}
+        setLyrics={setLyrics}
+        artist={artist}
+        title={title}
+      />
+    </>
   );
 }
 
